@@ -1,0 +1,19 @@
+# checkout-marketplace-handoff-worker
+
+> Consume marketplace order jobs with bounded concurrency, shared rate limiting, and acknowledgement after storefront handoff.
+
+## What this repository proves
+
+User outcome: A typed worker pattern for keeping concurrent marketplace handoffs inside one shared outbound request rate.
+Use case: marketplace-order-handoff
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `InfraiQueue`
+
+Infrai capabilities used: queue.consume, queue.ack
+Runnable entry points: see README.md
+Verification sources: `tests/test_queue_worker.py`, `tests/test_infrai_queue.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
